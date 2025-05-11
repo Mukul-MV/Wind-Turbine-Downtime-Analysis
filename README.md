@@ -80,23 +80,23 @@ The Power BI dashboard contains:
 
 * **Scatter Plot** (Wind speed vs. Actual power)
 
-  * ![image](https://github.com/user-attachments/assets/a90a617e-1af9-4109-ad90-c7fe03f7be7d)
+   ![image](https://github.com/user-attachments/assets/a90a617e-1af9-4109-ad90-c7fe03f7be7d)
 
 * **Day-wise Bar Chart** (Actual vs. Expected power)
 
-  * ![image](https://github.com/user-attachments/assets/95ee7b05-6dd5-4df5-8583-e328ef4483fd)
+   ![image](https://github.com/user-attachments/assets/95ee7b05-6dd5-4df5-8583-e328ef4483fd)
 
 * **Line Chart** (Average wind speed trend)
 
-  * *![image](https://github.com/user-attachments/assets/6f97b486-4239-42b8-864f-a50884547485)
+   ![image](https://github.com/user-attachments/assets/6f97b486-4239-42b8-864f-a50884547485)
 
 * **Monthly Area Chart** (Actual vs. Expected by month)
 
-  * *![image](https://github.com/user-attachments/assets/1fed4467-b6df-4a9d-94d2-077a7d02325e)
+   ![image](https://github.com/user-attachments/assets/1fed4467-b6df-4a9d-94d2-077a7d02325e)
 
 * **Days vs. Working Days** combo chart
 
-  * ![image](https://github.com/user-attachments/assets/df9b2cbe-d0ff-48a7-b2ff-63b08663ecc8)
+   ![image](https://github.com/user-attachments/assets/df9b2cbe-d0ff-48a7-b2ff-63b08663ecc8)
 
 
 ---
@@ -186,7 +186,7 @@ The Power BI dashboard contains:
 
 🎯 Find out:
 ## 1) When the turbine was down.
-    ![image](https://github.com/user-attachments/assets/ce7d88b2-cd58-4c46-9f16-2d76e28a7eb8)
+    ![image](https://github.com/user-attachments/assets/ba4f0705-8936-4bb9-8969-b9c274cc39a3)
    
 ## 2) Why Was the Turbine Down?
 
@@ -326,6 +326,49 @@ Each plot shows power output when wind speed was above cut-in threshold and the 
   At higher wind speeds (above ~10 m/s), actual and expected power tend to align more closely, possibly due to reduced influence of environmental or mechanical variability.
   
 ---
+
+# 🛠️ Problem Statement
+**The wind turbine is working most of the time (about 95% uptime), and the wind speed is good, especially at higher altitudes as seen from the LIDAR readings. However, the actual power and energy generated are often lower than what we expect.Since the turbine is running and getting enough wind, we are not sure why there is a loss in power. So, we reached out to the vendor to understand why the turbine is underperforming even in good conditions.**
+
+## 🧾 Vendor Feedback
+
+The vendor suspects the power loss may be due to the presence of **negative wind shear**, where wind speed **decreases with height**. This condition can result in **non-uniform loading across the rotor**, reducing overall turbine efficiency.
+
+The vendor recommends verifying that the **wind shear exponent (α)** is within the optimal range of **0.0 to 0.3**, where the turbine performance is typically maximized. Values outside this range—especially **negative values (α < 0)**—may lead to **sub-optimal power extraction**, even when wind speeds are high.
+
+## 📌 Action Items
+
+- Analyze the LIDAR wind profile data to calculate the wind shear exponent at various times.
+- Identify time periods where the shear exponent is **negative or unusually high**.
+    - Below 0
+    - Above 0.3
+    - Between 0-0.3
+- Correlate these time periods with turbine power output to confirm if **negative wind shear** is contributing to performance degradation.
+- Share findings with the vendor for further analysis or turbine tuning.
+
+![image](https://github.com/user-attachments/assets/157cb099-426a-446c-a1a4-dfe839328a64)
+
+##  📉 Results
+These results are when wind speed > cut - in , power genration < 100% and wind turbine is operational
+###  Vendor Assumption Doesn’t Hold in All Months
+
+- In **January (1)** and **February (2)**, power generation is **lowest** when wind shear is in the so-called *ideal range* (**0 < α < 0.3**).
+- This **contradicts** the vendor’s assumption that power generation should be highest in this range.
+
+
+
+###  Vendor Assumption Holds in March and December
+
+- In **March (3)** and **December (12)**, power generation is **highest** when wind shear is within the vendor-suggested range (**0 < α < 0.3**).
+- This **supports** the vendor’s assumption for these months.
+
+
+
+###  Additional Insight
+
+- Outside the vendor-suggested region (i.e., when shear is **< 0** or **> 0.3**), **power generation is not consistently decreasing**.
+- In fact, in several months, these ranges show **equal or better performance** than the ideal shear range.
+
 
 ## Key Inferences
 
