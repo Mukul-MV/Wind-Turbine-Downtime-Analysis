@@ -33,9 +33,6 @@ This repository contains a comprehensive analysis of wind turbine power generati
 
 > ![image](https://github.com/user-attachments/assets/1bf3bcd2-9fc0-490e-b794-35c7a07957a6)
 
-
-![Dashboard Overview](![image](https://github.com/user-attachments/assets/31cf8f48-554c-44fb-84e5-fcd20ee856a4))
-
 ---
 
 ## Project Agenda
@@ -56,10 +53,10 @@ The dataset includes:
 | Column             | Description                                |
 | ------------------ | ------------------------------------------ |
 | `timestamp`        | Date and time of reading                   |
-| `nasal_wind_speed` | Wind speed at nacelle (m/s)                |
+| `nacelle_wind_speed` | Wind speed at nacelle (m/s)                |
 | `actual_power`     | Measured power output (kW)                 |
 | `expected_power`   | Theoretical power based on wind speed (kW) |
-| `turbine_status`   | Operational state (1 = up, 0 = down)       |
+| `turbine_status`   | Operational state (100 = up, 0 = down)       |
 
 ---
 
@@ -105,8 +102,6 @@ The Power BI dashboard contains:
 
 ### Descriptive Statistics
 
-## Exploratory Data Analysis
-
 ### 📊 Wind Turbine Dataset – Inference Summary
 
 #### 🌬️ Wind Profile via LIDAR Readings
@@ -143,7 +138,7 @@ The Power BI dashboard contains:
 | **Max**              |            558.7  |              550.0* |
 
 > *Actual generation frequently falls short of expected values—signaling efficiency losses.*  
-> \*Expected generation per record computed from `Expected_Power` × Δt.
+> *Expected generation per record computed from `Expected_Power` × Δt.
 
 ---
 
@@ -186,7 +181,7 @@ The Power BI dashboard contains:
 
 🎯 Find out:
 ## 1) When the turbine was down.
-    ![image](https://github.com/user-attachments/assets/ba4f0705-8936-4bb9-8969-b9c274cc39a3)
+   ![image](https://github.com/user-attachments/assets/ba4f0705-8936-4bb9-8969-b9c274cc39a3)
    
 ## 2) Why Was the Turbine Down?
 
@@ -302,7 +297,7 @@ The Power BI dashboard contains:
 
 ![image](https://github.com/user-attachments/assets/a6518757-5559-4caa-bf68-aaaf74acc332)
 
-**Figure (1)
+**Figure (1):**
 
 ##### This graph is when wind speed more than cutin speed , turbine is operational
 - We can see that december is ideal month where mostly power loss is very less
