@@ -296,8 +296,35 @@ The Power BI dashboard contains:
 - **February 2025** shows **moderate loss** (26.04%) — better than January but still not optimal.
 
 
+![image](https://github.com/user-attachments/assets/896bd448-65c7-48de-be97-1d6652f1ad7c)
+
+![image](https://github.com/user-attachments/assets/8f4028ff-549b-4d2e-9fd6-9469215cf2fd)
+
+![image](https://github.com/user-attachments/assets/a6518757-5559-4caa-bf68-aaaf74acc332)
+
+**Figure (1)
+
+##### This graph is when wind speed more than cutin speed , turbine is operational
+- We can see that december is ideal month where mostly power loss is very less
+- janurary has more power losses , continuously throughout the month
 
 
+![image](https://github.com/user-attachments/assets/7390133f-2797-4a95-bd9c-36c304b2344c)
+
+**Figure (2):** Scatter plot comparing Wind Speed vs Actual and Expected Power for selected months. Most actual power values (blue) follow the expected curve (orange), but noticeable deviations—particularly below the expected curve—indicate performance inefficiencies or downtime even at favorable wind speeds.
+
+
+![image](https://github.com/user-attachments/assets/241a20ed-f3a0-4082-b289-decc8da89c4b)
+
+**Figure (3):** Scatter plots of Wind Speed vs Power (Actual vs Expected) for selected months (under operational conditions only).
+Each plot shows power output when wind speed was above cut-in threshold and the turbine was operational. The orange curve represents expected power at given wind speeds, while the blue dots represent actual power. Points significantly below the expected curve highlight underperformance despite operational status.
+
+- **Deviation Magnitude Varies by Month:**  
+  The spread of blue dots below the orange curve is wider in Months Jan and Feb compared to Month Dec, suggesting greater inefficiencies or losses during those periods.
+
+- **Closer Alignment at High Speeds:**  
+  At higher wind speeds (above ~10 m/s), actual and expected power tend to align more closely, possibly due to reduced influence of environmental or mechanical variability.
+  
 ---
 
 ## Key Inferences
@@ -315,5 +342,3 @@ The Power BI dashboard contains:
 * **Farm-level analysis** across multiple turbines.
 
 ---
-
-*Place your graphs in the `images/` directory and replace the placeholder text with actual file names.*
